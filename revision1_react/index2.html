@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Boilerplate Code</title>
+</head>
+<body>
+    <div id="root"></div>
+        <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+      <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        let User=({name,age,email})=>{        //arrow function
+            return (
+                <>
+                <h1>Name:{name}</h1>
+                <h1>Age:{age}</h1>
+                <h1>Email:{email}</h1>
+                </>
+                )
+        }
+        let ScoreCard=({score})=>{
+            return (
+                <h1>Score:{score}</h1>
+            )
+        }
+        let ContainerWithBlueBorder=({children})=>{
+            return (
+                <div style={{border:"3px solid blue",padding:"10px",margin:"10px"}}>
+                    {children}
+                </div>
+            )
+        }
+        let App =()=>{
+            return(
+                <>
+                <ContainerWithBlueBorder>
+                    <User name="meera" age={25} email="meera@123.com"/>
+                </ContainerWithBlueBorder>
+                <ContainerWithBlueBorder>
+                    <ScoreCard score={100}/>
+                </ContainerWithBlueBorder>
+                </>
+            )
+        }
+        let RR = ReactDOM.createRoot(document.getElementById('root'))
+        RR.render(<App/>)
+    </script>
+</body>
+</html>
